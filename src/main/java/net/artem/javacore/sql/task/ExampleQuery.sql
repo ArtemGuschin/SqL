@@ -25,7 +25,9 @@ insert into Employee (Id, Name, Salary, ManagerId) values ('2', 'Henry', '80000'
 insert into Employee (Id, Name, Salary, ManagerId) values ('3', 'Sam', '60000',Null)
 insert into Employee (Id, Name, Salary, ManagerId) values ('4', 'Max', '90000',Null)
 
-Select * From Employee
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee)
 
 Drop table Person;
 
